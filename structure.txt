@@ -1,0 +1,10 @@
+- your_project_directory/
+    - app.py
+    - model/
+        - best_random_forest_model_with_preprocessing.joblib
+    - templates/
+        - index.html
+    - static/
+        - style.css
+    - requirements.txt
+    - Procfile

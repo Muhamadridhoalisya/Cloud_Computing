@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car CombMpg Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Car CombMpg Predictor</h1>
+        <form action="/predict" method="post">
+            <label for="Mfr_Name">Manufacturer Name:</label>
+            <input type="text" id="Mfr_Name" name="Mfr Name" required>
+
+            <label for="Carline">Car Line:</label>
+            <input type="text" id="Carline" name="Carline" required>
+
+            <label for="Eng_Displ">Engine Displacement:</label>
+            <input type="number" step="0.1" id="Eng_Displ" name="Eng Displ" required>
+
+            <label for="Cylinders">Cylinders:</label>
+            <input type="number" id="Cylinders" name="Cylinders" required>
+
+            <label for="Transmission">Transmission:</label>
+            <input type="text" id="Transmission" name="Transmission" required>
+
+            <label for="Gears">Number of Gears:</label>
+            <input type="number" id="Gears" name="# Gears" required>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction_text %}
+            <div class="result">
+                <h2>{{ prediction_text }}</h2>
+                <h3>{{ category }}</h3>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
